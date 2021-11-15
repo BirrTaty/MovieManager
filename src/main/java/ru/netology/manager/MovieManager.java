@@ -10,10 +10,7 @@ public class MovieManager {
         int maxLength = 10;
     }
 
-    public MovieManager(MovieItem[] items, MovieManager[] maxLength) {
-        this.items = items;
-        this.maxLength = maxLength;
-    }
+
 
     public void add(MovieItem item) {
         int length = items.length + 1;

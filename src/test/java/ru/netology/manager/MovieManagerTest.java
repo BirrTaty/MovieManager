@@ -2,15 +2,13 @@ package ru.netology.manager;
 
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.MovieItem;
+import ru.netology.manager.MovieManager;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MovieManagerTest {
 
-    @Test
-    public void shouldChooseLimit(){
-        MovieManager movieManager = new MovieManager();
-        
+
 
     @Test
     public void shouldGetOneMovie() {
@@ -107,5 +105,5 @@ public class MovieManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-    }
+
 }
