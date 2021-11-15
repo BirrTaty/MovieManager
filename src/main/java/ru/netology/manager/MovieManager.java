@@ -4,6 +4,16 @@ import ru.netology.domain.MovieItem;
 
 public class MovieManager {
     private MovieItem[] items = new MovieItem[0];
+    private MovieManager[] maxLength = new MovieManager[9];
+
+    public MovieManager() {
+        int maxLength = 10;
+    }
+
+    public MovieManager(MovieItem[] items, MovieManager[] maxLength) {
+        this.items = items;
+        this.maxLength = maxLength;
+    }
 
     public void add(MovieItem item) {
         int length = items.length + 1;
@@ -17,11 +27,21 @@ public class MovieManager {
     }
 
     public MovieItem[] getLastTen() {
-        MovieItem[] result = new MovieItem[][items.length];
+        int resultLength;
+        if (items.length <= 10) {
+            resultLength = items.length;
+        } else {
+            resultLength = 10;
+        }
+
+        MovieItem[] result = new MovieItem[resultLength];
         for (int i = 0; i < result.length; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
         }
         return result;
     }
+
 }
+
+
