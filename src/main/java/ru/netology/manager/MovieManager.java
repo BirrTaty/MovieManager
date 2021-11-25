@@ -3,13 +3,16 @@ package ru.netology.manager;
 import ru.netology.domain.MovieItem;
 
 public class MovieManager {
+    private int limit;
     private MovieItem[] items = new MovieItem[0];
-    private MovieManager[] maxLength = new MovieManager[9];
 
-    public MovieManager() {
-        int maxLength = 10;
+    public MovieManager(int limit) {
+        this.limit = limit;
     }
 
+    public MovieManager() {
+        this.limit = 10;
+    }
 
 
     public void add(MovieItem item) {
@@ -25,10 +28,10 @@ public class MovieManager {
 
     public MovieItem[] getLastTen() {
         int resultLength;
-        if (items.length <= 10) {
+        if (items.length <= limit) {
             resultLength = items.length;
         } else {
-            resultLength = 10;
+            resultLength = limit;
         }
 
         MovieItem[] result = new MovieItem[resultLength];
